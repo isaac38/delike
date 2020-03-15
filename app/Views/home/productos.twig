@@ -1,0 +1,33 @@
+{% extends "partial/layout.twig" %}
+
+{% block content %}
+
+    <div>
+        <form class="form-inline" method="post" action={{ "home/productos"|url }}>
+            <div class="input-group col-md-6 offset-md-3">
+                <input class="form-control mr-sm-2" type="text" name="buscarProducto" placeholder="Buscar">
+                <button class="btn btn-success" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="cart-contenedor container">
+    <div class="row">
+        {% for item in datos %}
+            <div class="col-md-3">
+                <div class="card" style="width: 100%;">
+                    <img src="{{ "img/postres/"|public ~ item.imagen }}" style="height: 100%;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.nombre }}</h5>
+                        <p class="card-text">{{ item.descripcion }}</p>
+                        <p class="card-text">{{ item.venta }}</p>
+                        <a href="#" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

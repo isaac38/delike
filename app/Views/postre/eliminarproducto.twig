@@ -1,0 +1,62 @@
+{% extends "partial/layout.twig" %}
+
+{% block content %}
+
+
+
+    <form id="frmNuevoProducto" class="formulario" method="post" action="{{ "postre/eliminarproducto" |url }}" enctype="multipart/form-data">
+
+        <div class="col-md-6 offset-md-3">
+            <h2>Estas seguro de eliminar este productos</h2>
+
+            <div class="form-group">
+                <label for="nombreproducto">Nombre de Pastel</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre completo" disabled value="{{ postre.nombre }}">
+            </div>
+
+            <input type="hidden" name="id" value="{{ postre.id }}">
+
+            <div class="form-group">
+                <label for="id_tipo">Categoria</label>
+                <select class="custom-select" id="id_tipo" name="id_tipo" disabled required>
+                    <option value="0">Selecciona una categoria</option>
+                    {%  for item in categoria %}
+                        {% if postre.id_tipo == item.id %}
+                            <option value={{ item.id }} selected>{{ item.tipo }}</option>
+                        {% else %}
+                            <option value={{ item.id }}>{{ item.tipo }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion del postre" disabled required>{{ postre.descripcion }}</textarea>
+
+            </div>
+            <div class="form-group">
+                <label for="venta">Precio Venta</label>
+                <input type="number" class="form-control" id="venta" name="venta" placeholder="Precio Venta" disabled value="{{ postre.venta }}">
+            </div>
+
+            <div class="form-group">
+                <label for="cantidad">Cantidad</label>
+                <input type="number" class="form-control" id="cantidad" name="cantidad" placeholder="Existencia" disabled value="{{ postre.cantidad }}">
+            </div>
+
+            <div class="form-group">
+                <input type="file" class="form-control" id="imagen" name="imagen" disabled required>
+            </div>
+            <div class="form-group">
+                <img src="{{ "img/postres/" |public ~ postre.imagen }}" alt="" width="150" height="150">
+                <input type="hidden" name="imgactual" value="{{ postre.imagen }}">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Eliminar</button>
+            <button type="submit" class="btn btn-light"><a href="{{ "postre/index" |url }}" style="font-size: 15px ">Cancelar</a></button>
+
+        </div>
+    </form>
+
+{% endblock %}

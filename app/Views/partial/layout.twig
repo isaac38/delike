@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ "css/bootstrap" |public }}">
+    <link rel="stylesheet" href="{{ "css/fonts" |public }}">
+    <link rel="stylesheet" href="{{ "css/style" |public }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="top-barr">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="menu-top">
+                        <li>
+                            <img src="{{ "img/user.svg" |public }}" style="padding: 0px;" alt="">
+                            <a href="{{ "home/login" |url }}">Iniciar sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <a class="navbar-brand logo" href="{{ "home" |url }}">Delike</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="nav mr-auto ">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ "home" |url }}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ "home/productos" |url }}">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ "home/empresa" |url  }}">Empresa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ "home/contactos" |url}} ">Contactos</a>
+                    </li>
+                </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        {% block content %}{% endblock %}
+
+    </div>
+
+
+
+
+
+
+    <footer>
+
+    </footer>
+
+
+
+
+</div>
+
+
+
+
+
+<script src={{ "js/jquery-3.3.1.min.js"|public }}></script>
+<script src={{ "js/popper.min.js"|public }}></script>
+<script src={{ "js/bootstrap.js" |public }}></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% extends "partial/layout.twig" %}
+{# ARCHIVO INDEX DE LA CARPETA DE POSTRES #}
+{% block content %}
+
+
+    <button type="submit" class="btn btn-light"><a href="{{ "postre/nuevoproducto" |url }}">New product</a></button>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio Venta</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Cantidad</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in datos %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.venta }}</td>
+            <td>{{ item.descripcion }}</td>
+            <td>{{ item.cantidad }}</td>
+            <td><button type="submit" class="btn btn-primary"><a href="{{ "postre/editarproducto/" |url }}{{ item.id }}" style="font-size: 15px">Edit</a></button></td>
+            <td><button type="submit" class="btn btn-danger"><a href="{{ "postre/eliminarproducto/" |url }}{{ item.id }}" style="font-size: 15px">Delit</a></button></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

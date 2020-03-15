@@ -1,0 +1,112 @@
+* {
+    font-family: Bahnschrift;
+    scroll-behavior: smooth;
+    margin: 0px;
+    padding: 0px;
+
+}
+body{
+    background-color: #ffffff;
+    /*background-image: url("../img/hoguera1.png");
+    background-size: 50px;*/
+
+}
+
+.contenido{
+    margin: -100px;
+}
+
+
+/* Barra de navegacion y logo */
+/* Color y pocision de la barra de navegacion */
+
+
+    
+
+.cabesera{
+    height: 130px;
+    position: relative;
+
+}
+
+.contenedor-nav{
+    display: flex;
+    justify-content: space-around;
+    background-color: #CF641D;
+    position: relative;
+    top: 80px;
+}
+/*============================================*/
+
+/* Cambia el tamaño de la barra */
+.navegacion{
+    height: 50px;
+}
+/*=============================*/
+/*.navegacion li a img{
+    height: 50px;
+}*/
+/*.navegacion li{
+    display: flex;
+    flex-direction: row;
+    padding-left: 500px;
+
+
+}*/
+
+/* aplica cambios al texto del menu */
+.navegacion a{
+    color: #000000;
+    font-size: 15pt;
+}
+/*===================================*/
+
+
+/* Aplica cambios al logo */
+.navegacion img{
+    position: relative;
+    top: -90px;
+    height: 150px;
+    width: 150px;
+}
+/*=========================*/
+
+.contenedor-carrusel{
+    position: relative;
+    top: 100px;
+}
+
+
+.carrusel-imag img {
+    width: 500px;
+    height: 400px;
+}
+
+.contenedor-menu{
+    /*background-color: #000;*/
+    position: relative;
+    top: 100px;
+}
+
+/*.menu{
+    position: relative;
+    top: 100px;
+}*/
+
+.menu img{
+    height: 100%; 
+    width: 100%;
+}
+
+.contenedor-info{
+    background-color: aquamarine;
+    padding: 30px;  
+    position: relative;
+    top: 100px;
+}
+
+.info p{
+    font-size: 15pt;
+    color: #000000;
+    text-align: justify;
+}

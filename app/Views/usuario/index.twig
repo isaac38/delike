@@ -1,0 +1,30 @@
+{% extends "partial/layout.twig" %}
+{# ARCHIVO INDEX DE LA CARPETA DE USUARIO #}
+{% block content %}
+
+
+    <button type="submit" class="btn btn-light"><a href="{{ "usuario/nuevousuariobaken" |url }}">New product</a></button>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in datos%}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.nomusuario }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.user_psw }}</td>
+                <td><button type="submit" class="btn btn-primary"><a href="{{ "usuario/editarusuario/" |url }}{{ item.id }}" style="font-size: 15px">Edit</a></button></td>
+                <td><button type="submit" class="btn btn-danger"><a href="{{ "usuario/eliminarusuario/" |url }}{{ item.id }}" style="font-size: 15px">Delit</a></button></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

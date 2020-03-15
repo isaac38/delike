@@ -1,0 +1,133 @@
+{% extends "partial/layout.twig" %}
+
+{% block content %}
+
+
+    <div class="container-fluid">
+        <div id="cambio" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#cambio" data-slide-to="0" class="active"></li>
+                <li data-target="#cambio" data-slide-to="1"></li>
+                <li data-target="#cambio" data-slide-to="2"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carrusel-imag carousel-inner">
+                <div class="carousel-item active">
+                    <img src={{ "img/1.png"|public }} alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src={{ "img/2.png"|public }} alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src={{ "img/3.png"|public }} alt="">
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <!-- <a class="carousel-control-prev" href="#cambio" data-slide="prev">
+                 <span class="carousel-control-prev-icon"></span>
+             </a>
+             <a class="carousel-control-next" href="#cambio" data-slide="next">
+                 <span class="carousel-control-next-icon"></span>
+             </a> -->
+        </div>
+    </div>
+
+
+
+            <div class="cart-contenedor container">
+                <div class="row">
+                    {% for item in datos %}
+                    <div class="col-md-3">
+                        <div class="card" style="width: 100%;">
+                            <img src="{{ "img/postre/" |public ~ item.imagen }}"  class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ item.nombre }}</h5>
+                                <p class="card-text">{{ item.descripcion }}</p>
+                                <a href="#" class="btn btn-primary">Ver más</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    <!--<div class="col-md-3">
+                        <div class="card" style="width: 100%;">
+                            <img src="https://via.placeholder.com/100" style="height: 100%;" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card" style="width: 100%;">
+                            <img src="https://via.placeholder.com/100" style="height: 100%;" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card" style="width: 100%;">
+                            <img src="https://via.placeholder.com/100" style="height: 100%;" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card" style="width: 100%;">
+                            <img src="https://via.placeholder.com/100" style="height: 100%;" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div-->
+            </div>
+
+
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+{% endblock %}
